@@ -12,7 +12,7 @@ public class Main
 {
 	
 	String databaseName = "BookDatabase";
-    String collectionName = "Data";
+    String collectionName = "Data"; 
     String nomUsuariMongo = "Adria";
 	String passwordMongo = "exercici1";
 	String URLMongo = "cluster0.hlg7r.mongodb.net";
