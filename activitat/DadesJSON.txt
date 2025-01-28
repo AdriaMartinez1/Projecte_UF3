@@ -1,0 +1,235 @@
+{
+      "dada" : "llibre",
+      "titol": "El secret de la muntanya",
+      "autor": "Jordi Costa",
+      "genere": "Aventura",
+      "descripcio": "Una història apassionant al cor de les muntanyes.",
+      "any_publicacio": 2020,
+      "portada": "secret_muntanya.jpg"
+    }
+	
+	
+	{
+      "dada" : "llibre",
+      "titol": "El misteri de la biblioteca",
+      "autor": "Laura Font",
+      "genere": "Misteri",
+      "descripcio": "Un cas intrigant que et manté enganxat fins al final.",
+      "any_publicacio": 2019,
+      "portada": "misteri_biblioteca.jpg"
+    }
+	
+	
+	{
+      "dada" : "llibre",
+      "titol": "Viure intensament",
+      "autor": "Marta Rovira",
+      "genere": "Autoajuda",
+      "descripcio": "Una guia per viure amb plenitud i consciència.",
+      "any_publicacio": 2021,
+      "portada": "viure_intensament.jpg"
+    }
+	
+	{
+      "dada" : "llibre",
+      "titol": "Secrets del passat",
+      "autor": "Marc Bosch",
+      "genere": "Història",
+      "descripcio": "Una viatge fascinant a través del temps.",
+      "any_publicacio": 2018,
+      "portada": "secrets_passat.jpg"
+    }
+	
+	{
+      "dada" : "llibre",
+      "titol": "El poder de les paraules",
+      "autor": "Clara Lloret",
+      "genere": "Filosofia",
+      "descripcio": "Reflexions profundes sobre el significat de les paraules.",
+      "any_publicacio": 2022,
+      "portada": "poder_paraules.jpg"
+    }
+	
+
+	
+	{
+      "dada" : "llibre",
+      "titol": "El joc de la sepia",
+      "autor": "Jinmy",
+      "genere": "Thriller",
+      "descripcio": "Basada en una sèrie d'èxit",
+      "any_publicacio": 2023,
+      "portada": "joc_sepia.jpg"
+    }
+	
+	
+	{
+      "dada" : "llibre",
+      "titol": "Crims",
+      "autor": "Carles Porta",
+      "genere": "Misteri",
+      "descripcio": "Un cas intrigant que et manté enganxat fins al final.",
+      "any_publicacio": 2016,
+      "portada": "crims.jpg"
+    }
+	
+	
+	{
+      "dada" : "llibre",
+      "titol": "Tor",
+      "autor": "Carles Porta",
+      "genere": "Misteri",
+      "descripcio": "Basada en fets reals.",
+      "any_publicacio": 2024,
+      "portada": "tor.jpg"
+    }
+	
+	{
+      "dada" : "llibre",
+      "titol": "El noi de la casa de la muntanya",
+      "autor": "John Boyne",
+      "genere": "Història",
+      "descripcio": "Una viatge fascinant durant un periode de temps combuls.",
+      "any_publicacio": 2015,
+      "portada": "noi_muntanya.jpg"
+    }
+	
+	{
+      "dada" : "llibre",
+      "titol": "La republica de plato",
+      "autor": "Plato",
+      "genere": "Filosofia",
+      "descripcio": "Els fonaments de la filosofia.",
+      "any_publicacio": 2001,
+      "portada": "republica.jpg"
+    }
+	
+	
+	{
+      "dada" : "usuari",
+      "nom": "Anna Martínez",
+      "email": "anna.martinez@example.com",
+      "llibres_llegits": ["El secret de la muntanya", "El misteri de la biblioteca"],
+      "llibres_lectura_actual": ["Viure intensament"]
+    }
+	
+	{
+      "dada" : "usuari",
+      "nom": "Pere Soler",
+      "email": "pere.soler@example.com",
+      "llibres_llegits": ["Tor", "Crims"],
+      "llibres_lectura_actual": ["El secret de la muntanya"]
+    }
+	{
+      "dada" : "usuari",
+      "nom": "Joan Puig",
+      "email": "joan.puig@example.com",
+      "llibres_llegits": ["El secret de la muntanya", "El poder de les paraules"],
+      "llibres_lectura_actual": []
+    }
+	
+	{
+      "dada" : "usuari",
+      "nom": "Laura Ferrer",
+      "email": "laura.ferrer@example.com",
+      "llibres_llegits": ["Secrets del passat", "El joc de la sepia"],
+      "llibres_lectura_actual": ["El misteri de la biblioteca"]
+    }
+	
+	{
+      "dada" : "usuari",
+      "nom": "Carles Vidal",
+      "email": "carles.vidal@example.com",
+      "llibres_llegits": ["Crims", "La republica de plato"],
+      "llibres_lectura_actual": ["El noi de la casa de la muntanya"]
+    }
+	
+	{
+      "dada" : "ressenya",
+      "usuari_id": "Laura Ferrer",
+      "llibre_id": "Secrets del passat",
+      "valoracio": 8,
+      "comentari": "M'ha encantat la història i el ritme trepidant!",
+      "data": "2025-01-15"
+    }
+	
+	{
+      "dada" : "ressenya",
+      "usuari_id": "Laura Ferrer",
+      "llibre_id": "El joc de la sepia",
+      "valoracio": 4,
+      "comentari": "No segueix l'argument de la serie!",
+      "data": "2024-10-1"
+    }
+	
+	{
+      "dada" : "ressenya",
+      "usuari_id":"Carles Vidal",
+      "llibre_id": "Crims",
+      "valoracio": 9,
+      "comentari": "Un llibre que no pots deixar!",
+      "data": "2025-01-16"
+    }
+	
+	{
+      "dada" : "ressenya",
+      "usuari_id":"Carles Vidal",
+      "llibre_id": "La republica de plato",
+      "valoracio": 7,
+      "comentari": "Costa d'entendre!",
+      "data": "2024-05-16"
+    }
+	
+	{
+      "dada" : "ressenya",
+      "usuari_id": "Anna Martínez",
+      "llibre_id": "El secret de la muntanya",
+      "valoracio": 6,
+      "comentari": "Interessant però una mica repetitiu.",
+      "data": "2025-01-17"
+    }
+	
+	{
+      "dada" : "ressenya",
+      "usuari_id": "Anna Martínez",
+      "llibre_id": "El misteri de la biblioteca",
+      "valoracio": 5,
+      "comentari": "Malament.",
+      "data": "2024-07-20"
+    }
+	
+	{
+       "dada" : "ressenya",
+      "usuari_id": "Pere Soler",
+      "llibre_id": "Crims",
+      "valoracio": 7,
+      "comentari": "Molt ben documentat i emocionant.",
+      "data": "2025-01-18"
+    }
+	
+	{
+       "dada" : "ressenya",
+      "usuari_id": "Pere Soler",
+      "llibre_id": "Tor",
+      "valoracio": 8,
+      "comentari": "Es millor que la serie!.",
+      "data": "2024-03-30"
+    }
+	
+	{
+      "dada" : "ressenya",
+      "usuari_id": "Joan Puig",
+      "llibre_id": "El poder de les paraules",
+      "valoracio": 6,
+      "comentari": "Inspirador i transformador.",
+      "data": "2025-01-19"
+    }
+	
+	{
+      "dada" : "ressenya",
+      "usuari_id": "Joan Puig",
+      "llibre_id": "El secret de la muntanya",
+      "valoracio": 2,
+      "comentari": "Malament,no m'agrada el final.",
+      "data": "2025-01-11"
+    }
