@@ -20,13 +20,30 @@ public class Main
 
 
 	ConnectionManager mongomanager = null;
+	
+	Scanner terminalInput = null;
+	int option = 0;
+	boolean exit = false;
+	//ConnectionManager mongomanager = null;
+    View view = null;
+    Model model;
     
     
     public void start()
     {
+    	Llibre llibre;
         mongomanager = new ConnectionManager(databaseName, collectionName, nomUsuariMongo, passwordMongo, URLMongo);
         mongoconnection = mongomanager.getConnection();
- 
+        view = new View();
+        model = new Model(mongoconnection);
+        option = view.showMainMenu();
+        System.out.println(option);
+        switch (option)
+        {
+        case 1:
+        	llibre = view.menuInsertDocument();
+        	model.toDocument(llibre);
+        }
         
     }
     
