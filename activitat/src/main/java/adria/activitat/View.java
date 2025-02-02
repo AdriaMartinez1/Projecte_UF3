@@ -62,7 +62,7 @@ public class View {
     public Llibre menuInsertDocument()
     {
     	System.out.println("Aqui, demanaria les dades d'un nou llibre");
-    	Llibre newLlibre = new Llibre("llibre nou","xxxx xxxx","Misteri","guai",new Date(2025, 01, 01),"maduro.jpeg");
+    	Llibre newLlibre = new Llibre("llibre nou","xxxx xxxx","Misteri","guai",new Date(2025, 01, 01),"xxxx.jpeg");
 		return newLlibre;
     	
     }
