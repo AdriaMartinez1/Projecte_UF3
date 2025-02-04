@@ -1,5 +1,7 @@
 package adria.activitat;
 
+import org.bson.Document;
+
 import com.mongodb.client.MongoDatabase;
 
 public class Model {
@@ -9,7 +11,13 @@ public class Model {
 	}
 
 	public void toDocument(Llibre llibre) {
-		// TODO Auto-generated method stub
+		Document doc = new Document("titol", llibre.getTitol())
+                .append("autor", llibre.getAutor())
+                .append("genere", llibre.getGenere())
+                .append("descripcio", llibre.getDescripcio())
+                .append("any_publicacio", llibre.getAny_publicacio())
+                .append("portada", llibre.getPortada());
+        System.out.println("Document creat: " + doc.toJson());
 		
 	}
 
