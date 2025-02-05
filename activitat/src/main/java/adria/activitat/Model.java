@@ -1,13 +1,23 @@
 package adria.activitat;
 
+import com.mongodb.client.FindIterable;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 import com.mongodb.client.MongoDatabase;
 
 public class Model {
+	private final MongoCollection<Document> collection;
+	
 
 	public Model(MongoDatabase mongoconnection) {
-		// TODO Auto-generated constructor stub
+		this.collection = mongoconnection.getCollection("Data");
 	}
 
 	public void toDocument(Llibre llibre) {
@@ -20,5 +30,9 @@ public class Model {
         System.out.println("Document creat: " + doc.toJson());
 		
 	}
+	
+	
+	
+	
 
 }
