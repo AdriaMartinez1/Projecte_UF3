@@ -9,19 +9,21 @@ public class Llibre {
     private String autor;
     private String genere;
     private String descripcio;
-    private Date any_publicacio;
+    private int any_publicacio;
     private String portada;
-    private List<Usuari> usuaris;
+    private List<Lector> lector;
 
-    public Llibre(String titol, String autor, String genere, String descripcio, Date any_publicacio, String portada) {
+    public Llibre(String titol, String autor, String genere, String descripcio, int any_publicacio, String portada) {
         this.titol = titol;
         this.autor = autor;
         this.genere = genere;
         this.descripcio = descripcio;
         this.any_publicacio = any_publicacio;
         this.portada = portada;
-        this.usuaris = new ArrayList<>();
+        this.lector = new ArrayList<>();
     }
+    
+    
 
     public String getTitol() {
         return titol;
@@ -55,11 +57,11 @@ public class Llibre {
         this.descripcio = descripcio;
     }
 
-    public Date getAny_publicacio() {
+    public int getAny_publicacio() {
         return any_publicacio;
     }
 
-    public void setAny_publicacio(Date any_publicacio) {
+    public void setAny_publicacio(int any_publicacio) {
         this.any_publicacio = any_publicacio;
     }
 
@@ -71,12 +73,12 @@ public class Llibre {
         this.portada = portada;
     }
 
-    public List<Usuari> getUsuaris() {
-        return usuaris;
+    public List<Lector> getUsuaris() {
+        return lector;
     }
 
-    public void addUsuari(Usuari usuari) {
-        this.usuaris.add(usuari);
+    public void addUsuari(Lector usuari) {
+        this.lector.add(usuari);
     }
 
     @Override
@@ -88,59 +90,8 @@ public class Llibre {
                 ", descripcio='" + descripcio + '\'' +
                 ", any_publicacio=" + any_publicacio +
                 ", portada='" + portada + '\'' +
-                ", usuaris=" + usuaris +
+                ", usuaris=" + lector +
                 '}';
     }
 }
 
-class Ressenya {
-    private String text;
-
-    public Ressenya(String text) {
-        this.text = text;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    @Override
-    public String toString() {
-        return "Ressenya{" + "text='" + text + '\'' + '}';
-    }
-}
-
-class Usuari {
-    private String nom;
-    private List<Ressenya> ressenyes;
-
-    public Usuari(String nom) {
-        this.nom = nom;
-        this.ressenyes = new ArrayList<>();
-    }
-
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public List<Ressenya> getRessenyes() {
-        return ressenyes;
-    }
-
-    public void addRessenya(Ressenya ressenya) {
-        this.ressenyes.add(ressenya);
-    }
-
-    @Override
-    public String toString() {
-        return "Usuari{" + "nom='" + nom + '\'' + ", ressenyes=" + ressenyes + '}';
-    }
-}
