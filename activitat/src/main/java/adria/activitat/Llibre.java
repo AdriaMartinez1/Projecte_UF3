@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.bson.Document;
+
 public class Llibre {
     private String titol;
     private String autor;
@@ -83,15 +85,35 @@ public class Llibre {
 
     @Override
     public String toString() {
-        return "Llibre{" +
-                "titol='" + titol + '\'' +
-                ", autor='" + autor + '\'' +
-                ", genere='" + genere + '\'' +
-                ", descripcio='" + descripcio + '\'' +
-                ", any_publicacio=" + any_publicacio +
-                ", portada='" + portada + '\'' +
-                ", usuaris=" + lector +
-                '}';
+    	String sortida = 
+                 " -------------------------------" + '\n' +
+        		"Iitol= " + titol + '\n' +
+                "Autor= " + autor + '\n' +
+                "Genere= " + genere + '\n' +
+                "Descripcio= " + descripcio + '\n' +
+                "Any de publicacio= " + any_publicacio + '\n' +
+                "Portada= " + portada + '\n' +
+                "Lectors: " + '\n' ;
+    	
+    	for (int i = 0 ; i < lector.size(); i++)
+    		{
+    		sortida = sortida + lector.get(i).toString();
+    		}
+    	return sortida;
     }
+
+
+
+	public Document toDocument() {
+		Document doc = new Document("titol", this.titol)
+                .append("autor", this.autor)
+                .append("genere", this.genere)
+                .append("descripcio", this.descripcio)
+                .append("any_publicacio", this.any_publicacio)
+                .append("portada", this.portada);
+       // System.out.println("Document creat: " + doc.toJson());
+		
+		return doc;
+	}
 }
 
