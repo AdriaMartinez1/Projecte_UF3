@@ -3,6 +3,8 @@ package adria.activitat;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.bson.Document;
+
 class Lector {
     private String nom;
     private String ressenya;
@@ -30,6 +32,12 @@ class Lector {
 
     @Override
     public String toString() {
-        return "Usuari{" + "nom='" + nom + '\'' + ", ressenyas=" + ressenya + '}';
+        return "Nom= " + nom + ' ' + " Opinió= " + ressenya + '\n';
+    }
+    
+    public Document toDocument()
+    {
+    	Document lectorJSON = new Document("nom", this.nom).append("ressenya", this.ressenya);
+    	return lectorJSON;
     }
 }
