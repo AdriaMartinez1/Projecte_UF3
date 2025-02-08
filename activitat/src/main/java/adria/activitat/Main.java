@@ -23,7 +23,7 @@ public class Main
 	String URLMongo = "cluster0.hlg7r.mongodb.net";
 	String colleccio = "Data";
 	ArrayList<Llibre> resultatConsulta;
-
+	ArrayList<Integer> resultatDates;
 	MongoDatabase mongoconnection = null;
 	ConnectionManager mongomanager = null;
 	//Scanner terminalInput = null;
@@ -33,10 +33,12 @@ public class Main
 	// ConnectionManager mongomanager = null;
 	View view = null;
 	Model model;
-
+	String cerca="";
+	
 	public void start()
 	{
 		Llibre llibre;
+		Lector novaRessenya;
 		mongomanager = new ConnectionManager(databaseName, collectionName, nomUsuariMongo, passwordMongo, URLMongo);
 		mongoconnection = mongomanager.getConnection();
 		view = new View();
@@ -49,16 +51,33 @@ public class Main
 			switch (option)
 			{
 			case 1:
-				llibre = view.menuInsertDocument();
-				model.toDocument(llibre);
+				resultatConsulta = model.listAllDocuments();
+				//view.list(resultatConsulta);
+				//llibre = view.menuInsertDocument();
+				//model.toDocument(llibre);
+				llibre = view.menuNewReview(resultatConsulta);
+				//System.out.println(llibre.toString());
+				model.updateBook(llibre);
+				break;
+			case 2:
+				llibre = view.menuAddNewBook();
+				model.addDocument(llibre);
 				break;
 			case 3:
 				resultatConsulta = model.listAllDocuments();
 				view.list(resultatConsulta);
 				break;
 			case 4:
+				cerca=view.askTitle();
+				resultatConsulta = model.listTitle(cerca);
+				view.list(resultatConsulta);
 				break;
-			case 9:
+			case 5:
+				resultatDates=view.askDates();
+				resultatConsulta = model.listDates(resultatDates);
+				view.list(resultatConsulta);
+				break;
+			case 6:
 				exit = true;
 				break;
 			default:
