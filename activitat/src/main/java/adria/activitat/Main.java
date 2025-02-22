@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import org.bson.Document;
 import com.mongodb.client.FindIterable;
+import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 
 /**
@@ -24,13 +25,13 @@ public class Main
 	String colleccio = "Data";
 	ArrayList<Llibre> resultatConsulta;
 	ArrayList<Integer> resultatDates;
-	MongoDatabase mongoconnection = null;
+	MongoCollection mongoconnection = null;
 	ConnectionManager mongomanager = null;
 	//Scanner terminalInput = null;
 
 	int option = 0;
 	boolean exit = false;
-	// ConnectionManager mongomanager = null;
+	//ConnectionManager mongomanager = null;
 	View view = null;
 	Model model;
 	String cerca="";
@@ -43,7 +44,7 @@ public class Main
 		mongoconnection = mongomanager.getConnection();
 		view = new View();
 		model = new Model(mongoconnection);
-		model.connectToCollection(colleccio);
+		//model.connectToCollection(colleccio);
 		while (!exit)
 		{
 			option = view.showMainMenu();

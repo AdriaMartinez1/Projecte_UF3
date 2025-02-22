@@ -18,18 +18,18 @@ import com.mongodb.client.model.Updates;
 import com.mongodb.client.result.InsertOneResult;
 
 public class Model {
-	MongoDatabase database;
-    MongoCollection<Document> connectionToLlibres;
+	MongoCollection database;
+    //MongoCollection<Document> connectionToLlibres;
 	
-	public Model(MongoDatabase mongoconnection) {
+	public Model(MongoCollection mongoconnection) {
 		// TODO Auto-generated constructor stub
 		this.database = mongoconnection;
 	}
 	
-	public void connectToCollection(String collection)
-		{
-		connectionToLlibres = database.getCollection(collection);	
-		}
+//	public void connectToCollection(String collection)
+//		{
+//		connectionToLlibres = database.getCollection(collection);	
+//		}
 
 	public void toDocument(Llibre llibre) {
 		Document doc = new Document("titol", llibre.getTitol())
@@ -52,7 +52,7 @@ public class Model {
 			Llibre llibre;
 			ArrayList<Llibre> llibresToReturn = new ArrayList<Llibre>();
 			//SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy", Locale.ENGLISH);
-		FindIterable<Document> resultats =  connectionToLlibres.find();
+		FindIterable<Document> resultats =  database.find();
 		MongoCursor<Document> cursor = resultats.iterator();
 		while (cursor.hasNext()) {
 			Document item = cursor.next();
@@ -98,7 +98,7 @@ public class Model {
         FindOneAndUpdateOptions options = new FindOneAndUpdateOptions()
                                             .returnDocument(ReturnDocument.AFTER);
          // Updates the first document that matches the filter and prints the updated document as JSON                                    
-        Document result = connectionToLlibres.findOneAndUpdate(filter, update, options);
+        Document result = (Document) database.findOneAndUpdate(filter, update, options);
         //System.out.println(result.toJson());
         
         
@@ -108,7 +108,7 @@ public class Model {
 	public void addDocument(Llibre llibre) {
 		// TODO Auto-generated method stub
 		Document doc1 = new Document("dada", "llibre").append("titol", llibre.getTitol()).append("autor", llibre.getAutor()).append("genere", llibre.getGenere()).append("descripcio", llibre.getDescripcio()).append("any_publicacio", llibre.getAny_publicacio()).append("portada", llibre.getPortada()).append("lectors", llibre.getUsuaris());
-		InsertOneResult result = connectionToLlibres.insertOne(doc1);
+		InsertOneResult result = database.insertOne(doc1);
 		//System.out.println("Inserted a document with the following id: " + result.getInsertedId().asObjectId().getValue());
 		//connectionToLlibres.insertOne(llibre.toDocument());
 		
@@ -121,7 +121,7 @@ public class Model {
 		ArrayList<Llibre> llibresToReturn = new ArrayList<Llibre>();
 		//Bson filter = Filters.regex("titol", "$"+cerca+"$");
 		Bson filter = Filters.regex("titol", cerca);
-		FindIterable<Document> resultats =connectionToLlibres.find(filter);
+		FindIterable<Document> resultats =database.find(filter);
 		MongoCursor<Document> cursor = resultats.iterator();
 		while (cursor.hasNext()) {
 			Document item = cursor.next();
@@ -157,7 +157,7 @@ public class Model {
 		ArrayList<Llibre> llibresToReturn = new ArrayList<Llibre>();
 		//Bson filter = Filters.regex("titol", "$"+cerca+"$");
 		Bson filter = Filters.and(Filters.gte("any_publicacio",resultatDates.get(0) ),Filters.lte("any_publicacio",resultatDates.get(1)));
-		FindIterable<Document> resultats =connectionToLlibres.find(filter);
+		FindIterable<Document> resultats =database.find(filter);
 		MongoCursor<Document> cursor = resultats.iterator();
 		while (cursor.hasNext()) {
 			Document item = cursor.next();

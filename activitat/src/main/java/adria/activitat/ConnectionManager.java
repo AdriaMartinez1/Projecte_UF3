@@ -27,7 +27,7 @@ super();
     static MongoCollection<Document> collection;
         
     
-        public MongoDatabase getConnection()
+        public MongoCollection getConnection()
         {
         String uri = "mongodb+srv://"+nomUsuariMongo+":"+passwordMongo+"@"+URLMongo+"/";
 	    MongoClient mongoClient = MongoClients.create(uri);
@@ -37,7 +37,7 @@ super();
 			MongoDatabase database = mongoClient.getDatabase(databaseName); // <-- Nom de la base de dades
             // Obtener o crear una colección
 			collection = database.getCollection(collectionName); // <-- Nom de la col.lecció
-                        return database;
+                        return collection;
 
 		
     }
